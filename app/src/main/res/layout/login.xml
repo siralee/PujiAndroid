@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#8bc1f5"
+    tools:context=".login"
+    >
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:src="@drawable/puji_w"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="날마다 쌓여가는 환경 운동"
+            android:textColor="#ffffff"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_member_body"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintEnd_toEndOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="지금까지 ( "
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text=" ) 명이 동참하고 있습니다."
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userIdInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="50dp"
+            app:counterTextColor="@android:color/black"
+            app:endIconMode="clear_text"
+            app:endIconTintMode="src_over"
+            app:layout_constraintTop_toBottomOf="@id/layout_member_body"
+            android:background="@drawable/corner">
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/id_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="3dp"
+            android:text="등록되지 않은 계정 입니다."
+            android:textColor="#ff4444"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/userIdInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/userIdInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userPwInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="5dp"
+            app:counterTextColor="@android:color/black"
+            app:endIconMode="clear_text"
+            app:endIconTintMode="src_over"
+            app:layout_constraintTop_toBottomOf="@id/id_error"
+            android:background="@drawable/corner"
+            >
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/pw_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="3dp"
+            android:text="비밀번호가 틀렸습니다"
+            android:textColor="#ff4444"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/userPwInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/userPwInputLayout" />
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            android:layout_margin="15dp"
+            android:backgroundTint="#1D6EAB"
+            app:layout_constraintEnd_toStartOf="@id/button_signup"
+            app:layout_constraintStart_toStartOf="@id/userPwInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/pw_error" />
+
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="0dp"
+            android:layout_margin="15dp"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:backgroundTint="#1D6EAB"
+            app:layout_constraintEnd_toEndOf="@id/userPwInputLayout"
+            app:layout_constraintStart_toEndOf="@+id/button_login"
+            app:layout_constraintTop_toBottomOf="@+id/pw_error" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
